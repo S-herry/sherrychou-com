@@ -1,17 +1,17 @@
 ---
-import BaseLayout from "../layouts/BaseLayout.vue";
-import HomePage from "../components/HomePage.vue";
+import BaseLayout from "../../layouts/BaseLayout.vue";
+import BlogList from "../../components/BlogList.vue";
 ---
 
 <html lang="zh-Hant">
   <head>
-    <title>Sherry | Astro + Vue 科技感網站</title>
+    <title>部落格文章 | Sherry</title>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   </head>
   <body class="bg-gray-950 min-h-screen font-['Montserrat']">
     <BaseLayout>
-      <HomePage client:only="vue" />
+      <BlogList client:only="vue" />
     </BaseLayout>
   </body>
 </html>

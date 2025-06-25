@@ -1,0 +1,34 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.vue";
+import BlogPost from "../../components/BlogPost.vue";
+
+export function getStaticPaths() {
+  const posts = [
+    {
+      slug: "astro-vue3",
+      title: "Astro + Vue3 入門",
+      date: "2024-06-01",
+      content: "這是一篇介紹如何用 Astro 與 Vue3 打造現代網站的文章。",
+    },
+    {
+      slug: "tailwind-tech",
+      title: "Tailwind CSS 科技感設計",
+      date: "2024-06-02",
+      content: "這篇文章介紹如何用 Tailwind 打造暗色科技感 UI。",
+    },
+  ];
+
+  return posts.map((post) => ({
+    params: { blog: post.slug },
+    props: { post },
+  }));
+}
+
+const { post } = Astro.props;
+---
+
+<BaseLayout>
+  <main class="bg-gray-950 min-h-screen font-['Montserrat'] p-4">
+    <BlogPost client:only="vue" post={post} />
+  </main>
+</BaseLayout>

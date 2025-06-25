@@ -1,0 +1,40 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.vue";
+import PortfolioWork from "../../components/PortfolioWork.vue";
+
+// 🔽 把 works 放在外層，讓 getStaticPaths 能讀到它
+
+export function getStaticPaths() {
+  const works = [
+    {
+      slug: "interactive-a",
+      title: "互動式作品 A",
+      image:
+        "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=400&q=80",
+      description: "結合動畫與滑動互動的前端專案",
+      content: "這是作品 A 的詳細介紹，包含技術棧、設計理念與互動效果。",
+    },
+    {
+      slug: "tech-b",
+      title: "科技感網站 B",
+      image:
+        "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=400&q=80",
+      description: "暗色系科技感設計網站",
+      content: "這是作品 B 的詳細介紹，強調科技感設計與動畫體驗。",
+    },
+  ];
+
+  return works.map((work) => ({
+    params: { portfolio: work.slug },
+    props: { work },
+  }));
+}
+
+const { work } = Astro.props;
+---
+
+<BaseLayout>
+  <main class="bg-gray-950 min-h-screen font-['Montserrat'] p-4">
+    <PortfolioWork client:only="vue" :work={work} />
+  </main>
+</BaseLayout>
