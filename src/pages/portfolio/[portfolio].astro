@@ -34,7 +34,9 @@ const { work } = Astro.props;
 ---
 
 <BaseLayout>
-  <main class="bg-gray-950 min-h-screen font-['Montserrat'] p-4">
+  <main
+    class="bg-bg min-h-screen font-['Montserrat','sans-serif'] p-4 text-accent"
+  >
     <PortfolioWork client:only="vue" :work={work} />
   </main>
 </BaseLayout>

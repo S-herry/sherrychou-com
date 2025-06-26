@@ -1,8 +1,8 @@
 <template>
-  <div class="bg-gradient-to-br from-gray-800 to-gray-900 border border-cyan-500/30 rounded-xl p-6 shadow-lg transition-transform hover:-translate-y-2 hover:shadow-cyan-500/30 animate-slidein">
-    <h2 class="text-2xl font-bold text-cyan-300 mb-2">{{ title }}</h2>
-    <p class="text-gray-300 mb-4">{{ description }}</p>
-    <span class="text-xs text-gray-500">{{ date }}</span>
+  <div class="bg-primary border border-accent/30 rounded-xl p-6 shadow-sm transition-transform hover:-translate-y-1 hover:shadow-lg hover:border-secondary/60 group">
+    <h2 class="text-2xl font-bold text-accent mb-2">{{ title }}</h2>
+    <p class="text-gray-700 mb-4">{{ description }}</p>
+    <span class="text-xs text-secondary">{{ date }}</span>
   </div>
 </template>
 
@@ -15,11 +15,5 @@ defineProps({
 </script>
 
 <style scoped>
-@keyframes slidein {
-  from { opacity: 0; transform: translateY(40px); }
-  to { opacity: 1; transform: none; }
-}
-.animate-slidein {
-  animation: slidein 1s cubic-bezier(.4,0,.2,1) both;
-}
+/* 移除動畫與螢光色 */
 </style>

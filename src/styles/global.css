@@ -1,3 +1,13 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@import 'aos/dist/aos.css';
+
+/* 自訂全站游標樣式（奶油圓點） */
+body {
+  cursor: url('data:image/svg+xml;utf8,<svg width="32" height="32" xmlns="http://www.w3.org/2000/svg"><circle cx="16" cy="16" r="8" fill="%23E8DED1" stroke="%238D7B68" stroke-width="2"/></svg>') 16 16, auto;
+}
+
+a, button, .cursor-pointer {
+  cursor: url('data:image/svg+xml;utf8,<svg width="32" height="32" xmlns="http://www.w3.org/2000/svg"><circle cx="16" cy="16" r="8" fill="%238D7B68" stroke="%23C9ADA7" stroke-width="2"/></svg>') 16 16, pointer;
+}
